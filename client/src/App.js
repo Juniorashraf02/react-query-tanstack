@@ -5,6 +5,7 @@ import PostsListOne from "./PostsListOne";
 import PostsListTwo from "./PostsListTwo";
 import CreatePost from "./CreatePost";
 import PostListPagination from "./PostListPagination";
+import InfinitePostList from "./InfinitePostList";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(<PostsListOne />);
@@ -21,7 +22,7 @@ function App() {
           setCurrentPage(<CreatePost setCurrentPage={setCurrentPage} />)
         }
       >
-        Crete Post
+        Create Post
       </button>
       <button
         onClick={() =>
@@ -29,6 +30,13 @@ function App() {
         }
       >
         pagination
+      </button>
+      <button
+        onClick={() =>
+          setCurrentPage(<InfinitePostList />)
+        }
+      >
+        infinite scrolling
       </button>
       <br />
       <br />
