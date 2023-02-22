@@ -10,6 +10,7 @@ const CreatePost = ({ setCurrentPage }) => {
   const createNewPost = useMutation({
     mutationFn: createPost,
     onSuccess: (data)=>{
+      queryClient.setQueryData(['posts', data.id], data)
         queryClient.invalidateQueries(["posts"], {exact: true})
         setCurrentPage(<Post id={data.id}/>)
     },

@@ -4,6 +4,7 @@ import Post from "./Post";
 import PostsListOne from "./PostsListOne";
 import PostsListTwo from "./PostsListTwo";
 import CreatePost from "./CreatePost";
+import PostListPagination from "./PostListPagination";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(<PostsListOne />);
@@ -21,6 +22,13 @@ function App() {
         }
       >
         Crete Post
+      </button>
+      <button
+        onClick={() =>
+          setCurrentPage(<PostListPagination />)
+        }
+      >
+        pagination
       </button>
       <br />
       <br />
