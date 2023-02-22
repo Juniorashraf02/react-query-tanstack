@@ -7,6 +7,8 @@ const PostsListOne = () => {
     queryKey: ["posts"],
     queryFn: getPosts,
     refetchInterval: 1000,
+    // initialData: [{id:1, title:"Initial Data"}],
+    placeholderData: [{id:1, title:"New Data"}]
   });
 
   if (postQuery.isLoading) return <p>Loading....</p>;
